@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Interactive Habitability Explorer — input planetary parameters and receive a habitability prediction.">
+    <title>Explorer — EPHI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <!-- No logo-icon here -->
+                <span>EPHI</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="dataset.html">Dataset</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="orbitalis.html" class="btn btn-orbitalis" style="padding:8px 20px; font-size:0.85rem;">Orbitalis</a></li>
+                <li><a href="explorer.html" class="btn btn-primary active"
+                        style="padding:8px 20px; font-size:0.85rem;">Explorer</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="badge badge-cyan" style="margin-bottom:16px;">🔬 Interactive Tool</div>
+            <h1>Habitability Explorer</h1>
+            <p>Enter planetary parameters to estimate habitability potential using our heuristic model</p>
+        </div>
+    </div>
+
+    <!-- Explorer Section -->
+    <section>
+        <div class="container">
+            <div class="grid-2" style="align-items:start;">
+                <!-- Input Form -->
+                <div>
+                    <div class="explorer-form reveal">
+                        <h3 style="margin-bottom:24px;">Enter Planetary Parameters</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-icon">📏</span> Orbital Distance
+                                </label>
+                                <input type="number" id="orbitalDistance" placeholder="1.0" step="0.01" min="0.01"
+                                    max="100" value="1.0">
+                                <span class="input-hint">Distance from star in AU (Earth = 1.0)</span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-icon">🌟</span> Stellar Temperature
+                                </label>
+                                <input type="number" id="stellarTemp" placeholder="5778" step="1" min="2000" max="40000"
+                                    value="5778">
+                                <span class="input-hint">Host star temperature in Kelvin (Sun = 5778K)</span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-icon">🌏</span> Planet Radius
+                                </label>
+                                <input type="number" id="planetRadius" placeholder="1.0" step="0.01" min="0.1" max="25"
+                                    value="1.0">
+                                <span class="input-hint">Relative to Earth (Earth = 1.0 R⊕)</span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-icon">⚖️</span> Planet Mass
+                                </label>
+                                <input type="number" id="planetMass" placeholder="1.0" step="0.01" min="0.01" max="5000"
+                                    value="1.0">
+                                <span class="input-hint">Relative to Earth (Earth = 1.0 M⊕)</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="predictBtn" style="width:100%; justify-content:center;"
+                            onclick="predictHabitability()">
+                            🔮 Analyze Habitability
+                        </button>
+                    </div>
+
+                    <!-- Quick Presets -->
+                    <div class="card reveal" style="margin-top:24px;">
+                        <h4 style="margin-bottom:16px;">Quick Presets</h4>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                            <button class="btn btn-secondary" style="padding:8px 16px; font-size:0.8rem;"
+                                onclick="setPreset('earth')">🌍 Earth</button>
+                            <button class="btn btn-secondary" style="padding:8px 16px; font-size:0.8rem;"
+                                onclick="setPreset('mars')">🔴 Mars</button>
+                            <button class="btn btn-secondary" style="padding:8px 16px; font-size:0.8rem;"
+                                onclick="setPreset('venus')">🟡 Venus</button>
+                            <button class="btn btn-secondary" style="padding:8px 16px; font-size:0.8rem;"
+                                onclick="setPreset('jupiter')">🟤 Jupiter</button>
+                            <button class="btn btn-secondary" style="padding:8px 16px; font-size:0.8rem;"
+                                onclick="setPreset('proxima')">⭐ Proxima b</button>
+                            <button class="btn btn-secondary" style="padding:8px 16px; font-size:0.8rem;"
+                                onclick="setPreset('trappist')">🪐 TRAPPIST-1e</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Panel Only -->
+                <div>
+                    <div class="result-panel" id="resultPanel">
+                        <div style="font-size:3rem; margin-bottom:8px;" id="resultEmoji">🌍</div>
+                        <div class="result-score" id="resultScore">—</div>
+                        <div class="result-classification" id="resultClass">Awaiting Input</div>
+                        <div class="result-confidence" id="resultConfidence">Enter parameters to begin analysis</div>
+
+                        <div class="result-details" id="resultDetails">
+                            <div class="result-detail-item">
+                                <div class="detail-label">Insolation Flux</div>
+                                <div class="detail-value" id="detailFlux">—</div>
+                            </div>
+                            <div class="result-detail-item">
+                                <div class="detail-label">Equilibrium Temperature</div>
+                                <div class="detail-value" id="detailTemp">—</div>
+                            </div>
+                            <div class="result-detail-item">
+                                <div class="detail-label">Surface Gravity Factor</div>
+                                <div class="detail-value" id="detailGravity">—</div>
+                            </div>
+                            <div class="result-detail-item">
+                                <div class="detail-label">HZ Position</div>
+                                <div class="detail-value" id="detailHZ">—</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>How the Explorer Works</h2>
+                <p>Understanding the simplified habitability scoring process</p>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal">
+                    <div class="card-icon">1️⃣</div>
+                    <h3>Parameter Input</h3>
+                    <p>You provide four key planetary parameters: orbital distance, stellar temperature, planet radius,
+                        and planet mass. These represent the most influential factors in habitability determination.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">2️⃣</div>
+                    <h3>Heuristic Calculation</h3>
+                    <p>The system computes derived features (insolation flux, equilibrium temperature, surface gravity)
+                        and evaluates them against Earth-like ranges using weighted scoring functions.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">3️⃣</div>
+                    <h3>Classification Output</h3>
+                    <p>Based on the composite score, the planet is classified as Habitable, Potentially Habitable, or
+                        Non-Habitable, along with a simulated confidence percentage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-logo">EPHI</span>
+                    <span class="footer-text">© 2026 Exoplanet Habitability Index</span>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="methodology.html">Methodology</a>
+                    <a href="explorer.html">Explorer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn about exoplanets, the habitable zone concept, and major space missions like Kepler and TESS.">
+    <title>About — EPHI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <!-- No logo-icon here -->
+                <span>EPHI</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="dataset.html">Dataset</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="orbitalis.html" class="btn btn-orbitalis" style="padding:8px 20px; font-size:0.85rem;">Orbitalis</a></li>
+                <li><a href="explorer.html" class="btn btn-primary"
+                        style="padding:8px 20px; font-size:0.85rem;">Explorer</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="badge badge-cyan" style="margin-bottom:16px;">🌌 Scientific Background</div>
+            <h1>About Exoplanets</h1>
+            <p>Understanding the science behind planetary habitability and the search for life beyond Earth</p>
+        </div>
+    </div>
+
+    <!-- What Are Exoplanets -->
+    <section>
+        <div class="container">
+            <div class="grid-2" style="align-items:start;">
+                <div class="content-block reveal">
+                    <h2>What Are Exoplanets?</h2>
+                    <p>An exoplanet is a planet that orbits a star outside our Solar System. These worlds come in an
+                        extraordinary variety — from scorching hot gas giants to rocky planets that may harbor liquid
+                        water on their surfaces.</p>
+                    <p>Since the first confirmed exoplanet discovery in 1992, astronomers have identified over 6,000
+                        exoplanets using techniques such as the transit method and radial velocity measurements. Each
+                        discovery brings us closer to answering the profound question: are we alone in the universe?</p>
+                    <p>The study of exoplanets combines multiple disciplines including astrophysics, planetary science,
+                        and atmospheric chemistry. Modern telescopes can now detect the chemical signatures of exoplanet
+                        atmospheres, opening new frontiers in the search for biosignatures.</p>
+                </div>
+                <div class="card reveal" style="align-self:start;">
+                    <div class="card-icon">🔭</div>
+                    <h3>Key Discovery Methods</h3>
+                    <ul style="list-style:none; padding:0; margin-top:16px;">
+                        <li
+                            style="padding:12px 0; border-bottom:1px solid var(--card-border); color:var(--text-muted);">
+                            <strong style="color:var(--text-white);">Transit Method</strong><br>
+                            Detects planets by measuring periodic dips in starlight
+                        </li>
+                        <li
+                            style="padding:12px 0; border-bottom:1px solid var(--card-border); color:var(--text-muted);">
+                            <strong style="color:var(--text-white);">Radial Velocity</strong><br>
+                            Measures the star's wobble caused by a planet's gravitational pull
+                        </li>
+                        <li
+                            style="padding:12px 0; border-bottom:1px solid var(--card-border); color:var(--text-muted);">
+                            <strong style="color:var(--text-white);">Direct Imaging</strong><br>
+                            Captures light directly from the planet itself
+                        </li>
+                        <li style="padding:12px 0; color:var(--text-muted);">
+                            <strong style="color:var(--text-white);">Gravitational Microlensing</strong><br>
+                            Uses gravity of stars to bend and magnify light from distant planets
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habitable Zone -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>The Habitable Zone</h2>
+                <p>Understanding the "Goldilocks Zone" where conditions may be just right for life</p>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(248,113,113,0.2), rgba(248,113,113,0.1)); border-color:rgba(248,113,113,0.3);">
+                        🔥</div>
+                    <h3>Too Hot</h3>
+                    <p>Planets too close to their star receive excessive radiation. Surface temperatures can exceed
+                        400°C, causing any water to evaporate. Venus in our solar system is an example.</p>
+                    <div class="badge badge-red" style="margin-top:16px;">Inner Boundary</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(52,211,153,0.2), rgba(52,211,153,0.1)); border-color:rgba(52,211,153,0.3);">
+                        💧</div>
+                    <h3>Just Right</h3>
+                    <p>The habitable zone — the distance from a star where liquid water could exist on a planet's
+                        surface. Temperature, atmospheric pressure, and stellar luminosity all play crucial roles.</p>
+                    <div class="badge badge-green" style="margin-top:16px;">Habitable Zone</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(96,165,250,0.2), rgba(96,165,250,0.1)); border-color:rgba(96,165,250,0.3);">
+                        ❄️</div>
+                    <h3>Too Cold</h3>
+                    <p>Planets too far from their star receive insufficient energy. Any surface water would freeze. Mars
+                        exists near the outer edge of our Sun's habitable zone.</p>
+                    <div class="badge badge-cyan" style="margin-top:16px;">Outer Boundary</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Space Missions -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Key Space Missions</h2>
+                <p>The missions that have revolutionized our understanding of exoplanets</p>
+            </div>
+            <div class="grid-2">
+                <div class="card reveal">
+                    <div class="badge badge-purple" style="margin-bottom:16px;">2009 — 2018</div>
+                    <h3>Kepler Space Telescope</h3>
+                    <p>Kepler was NASA's first dedicated exoplanet-hunting mission. It observed over 530,000 stars and
+                        discovered more than 2,600 confirmed exoplanets. Kepler demonstrated that planets are common in
+                        our galaxy, with some estimates suggesting more planets than stars exist in the Milky Way.</p>
+                    <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+                        <div class="badge badge-cyan">2,600+ Planets</div>
+                        <div class="badge badge-green">530K Stars</div>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="badge badge-purple" style="margin-bottom:16px;">2018 — Present</div>
+                    <h3>TESS (Transiting Exoplanet Survey Satellite)</h3>
+                    <p>TESS is surveying over 200,000 of the brightest stars near Earth to search for transiting
+                        exoplanets. Unlike Kepler, TESS examines stars across the entire sky. It has already identified
+                        thousands of planet candidates, many of which are in the habitable zones of their stars.</p>
+                    <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+                        <div class="badge badge-cyan">7,000+ Candidates</div>
+                        <div class="badge badge-green">Full Sky Survey</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-logo">EPHI</span>
+                    <span class="footer-text">© 2026 Exoplanet Habitability Index</span>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="methodology.html">Methodology</a>
+                    <a href="explorer.html">Explorer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

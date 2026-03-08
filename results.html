@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Analysis results — model comparison, feature importance, habitability distribution, and correlation analysis.">
+    <title>Results — EPHI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <!-- No logo-icon here -->
+                <span>EPHI</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="dataset.html">Dataset</a></li>
+                <li><a href="results.html" class="active">Results</a></li>
+                <li><a href="orbitalis.html" class="btn btn-orbitalis" style="padding:8px 20px; font-size:0.85rem;">Orbitalis</a></li>
+                <li><a href="explorer.html" class="btn btn-primary"
+                        style="padding:8px 20px; font-size:0.85rem;">Explorer</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="badge badge-cyan" style="margin-bottom:16px;">📊 Analysis Output</div>
+            <h1>Results</h1>
+            <p>Model performance, feature analysis, and habitability classification results</p>
+        </div>
+    </div>
+
+    <!-- Model Comparison -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Model Performance Comparison</h2>
+                <p>Accuracy, precision, recall, and F1 scores across all models</p>
+            </div>
+            <div class="chart-container reveal">
+                <h3>📈 Model Accuracy Comparison</h3>
+                <canvas id="modelComparisonChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Importance -->
+    <section>
+        <div class="container">
+            <div class="grid-2">
+                <div class="chart-container reveal">
+                    <h3>🎯 Feature Importance (Random Forest)</h3>
+                    <canvas id="featureImportanceChart"></canvas>
+                </div>
+                <div class="chart-container reveal">
+                    <h3>🌍 Habitability Distribution</h3>
+                    <canvas id="habitabilityDistChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Correlation Heatmap -->
+    <section>
+        <div class="container">
+            <div class="chart-container reveal">
+                <h3>🔗 Feature Correlation Matrix</h3>
+                <canvas id="correlationChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Findings -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Key Findings</h2>
+                <p>Summary of the most significant results from the analysis</p>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(52,211,153,0.2), rgba(52,211,153,0.1)); border-color:rgba(52,211,153,0.3);">
+                        🏆</div>
+                    <h3>XGBoost Leads</h3>
+                    <p>XGBoost achieved the highest overall accuracy at 94.2%, with particularly strong performance in
+                        identifying potentially habitable planets. Its gradient boosting approach effectively captured
+                        complex feature interactions.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(56,189,248,0.2), rgba(56,189,248,0.1)); border-color:rgba(56,189,248,0.3);">
+                        🔑</div>
+                    <h3>Insolation Flux Dominates</h3>
+                    <p>Insolation flux emerged as the most important feature for habitability prediction, accounting for
+                        approximately 28% of model decision power. This aligns with astrophysical understanding of
+                        habitable zone dynamics.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(167,139,250,0.2), rgba(167,139,250,0.1)); border-color:rgba(167,139,250,0.3);">
+                        📊</div>
+                    <h3>Class Imbalance Impact</h3>
+                    <p>Only 12% of the dataset represents potentially habitable planets. SMOTE oversampling increased
+                        recall for the habitable class from 67% to 89%, significantly reducing the number of missed
+                        habitable candidates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-logo">EPHI</span>
+                    <span class="footer-text">© 2026 Exoplanet Habitability Index</span>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="methodology.html">Methodology</a>
+                    <a href="explorer.html">Explorer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

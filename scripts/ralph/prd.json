@@ -1,0 +1,19 @@
+{
+    "project": "EPHI",
+    "branchName": "main",
+    "description": "Initial setup",
+    "userStories": [
+        {
+            "id": "US-000",
+            "title": "Tool Integration",
+            "description": "Integrate GSD and Ralph into the workspace",
+            "acceptanceCriteria": [
+                "GSD files present in .planning",
+                "Ralph scripts present in scripts/ralph"
+            ],
+            "priority": 1,
+            "passes": true,
+            "notes": "Done manually"
+        }
+    ]
+}

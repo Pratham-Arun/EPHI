@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Dataset features used in exoplanet habitability analysis — planetary, stellar, and derived parameters.">
+    <title>Dataset — EPHI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <!-- No logo-icon here -->
+                <span>EPHI</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="dataset.html" class="active">Dataset</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="orbitalis.html" class="btn btn-orbitalis" style="padding:8px 20px; font-size:0.85rem;">Orbitalis</a></li>
+                <li><a href="explorer.html" class="btn btn-primary"
+                        style="padding:8px 20px; font-size:0.85rem;">Explorer</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="badge badge-cyan" style="margin-bottom:16px;">📂 Data Description</div>
+            <h1>Dataset</h1>
+            <p>Planetary, stellar, and derived features used for habitability analysis</p>
+        </div>
+    </div>
+
+    <!-- Planetary Parameters -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Planetary Parameters</h2>
+                <p>Physical properties of the exoplanets in the dataset</p>
+            </div>
+            <div class="grid-4">
+                <div class="card reveal">
+                    <div class="card-icon">🌏</div>
+                    <h3>Planet Size</h3>
+                    <p>Measured by comparing it to Earth. Knowing how big a planet is helps us guess whether it is a rocky world like ours, or a massive gas giant like Jupiter.</p>
+                    <div
+                        style="margin-top:16px; font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-cyan);">
+                        Unit: Earth Radii (R⊕)</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Planet Weight (Mass)</h3>
+                    <p>Measured by comparing how heavy it is compared to Earth. A planet needs enough weight (gravity) to hold onto an atmosphere, which is essential for breathing and staying warm.</p>
+                    <div
+                        style="margin-top:16px; font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-cyan);">
+                        Unit: Earth Masses (M⊕)</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">⏱️</div>
+                    <h3>Year Length (Orbit)</h3>
+                    <p>The time it takes for the planet to travel all the way around its sun. If a year is very short, the planet is probably extremely close to the star and burning hot.</p>
+                    <div
+                        style="margin-top:16px; font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-cyan);">
+                        Unit: Earth Days</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">📏</div>
+                    <h3>Distance from Sun</h3>
+                    <p>How far the planet is from its star. This is the biggest factor in deciding if the planet is in the "Habitable Zone" where it’s not too hot and not too cold for water.</p>
+                    <div
+                        style="margin-top:16px; font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-cyan);">
+                        Unit: Astronomical Units (AU)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stellar Parameters -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Stellar Parameters</h2>
+                <p>Properties of the host stars that influence planetary habitability</p>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(251,191,36,0.2), rgba(248,113,113,0.1)); border-color:rgba(251,191,36,0.3);">
+                        🌟</div>
+                    <h3>Stellar Temperature</h3>
+                    <p>Effective surface temperature of the host star measured in Kelvin. Determines the spectral type
+                        and the habitable zone boundaries for orbiting planets.</p>
+                    <div
+                        style="margin-top:16px; font-family:var(--font-mono); font-size:0.85rem; color:var(--warning-amber);">
+                        Unit: Kelvin (K)</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(251,191,36,0.2), rgba(248,113,113,0.1)); border-color:rgba(251,191,36,0.3);">
+                        💡</div>
+                    <h3>Stellar Luminosity</h3>
+                    <p>Total energy output of the star relative to the Sun (L☉). Higher luminosity pushes the habitable
+                        zone further from the star.</p>
+                    <div
+                        style="margin-top:16px; font-family:var(--font-mono); font-size:0.85rem; color:var(--warning-amber);">
+                        Unit: L☉</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(251,191,36,0.2), rgba(248,113,113,0.1)); border-color:rgba(251,191,36,0.3);">
+                        ☀️</div>
+                    <h3>Stellar Radius</h3>
+                    <p>Physical size of the host star measured in solar radii (R☉). Affects the transit depth and the
+                        extent of the star's gravitational influence on orbiting planets.</p>
+                    <div
+                        style="margin-top:16px; font-family:var(--font-mono); font-size:0.85rem; color:var(--warning-amber);">
+                        Unit: R☉</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Derived Features -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Derived Features</h2>
+                <p>Calculated parameters that provide deeper habitability indicators</p>
+            </div>
+            <div class="grid-2">
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(167,139,250,0.2), rgba(167,139,250,0.1)); border-color:rgba(167,139,250,0.3);">
+                        ☢️</div>
+                    <h3>Insolation Flux</h3>
+                    <p>The amount of stellar radiation received by the planet, measured relative to Earth (S⊕). This is
+                        one of the most critical indicators for habitability as it directly determines the energy
+                        available for maintaining liquid water on the surface.</p>
+                    <p style="margin-top:12px;"><strong style="color:var(--text-white);">Earth-like range:</strong> 0.36
+                        — 1.11 S⊕</p>
+                    <div
+                        style="margin-top:16px; font-family:var(--font-mono); font-size:0.85rem; color:var(--purple-accent);">
+                        Unit: S⊕ (Earth flux)</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"
+                        style="background:linear-gradient(135deg, rgba(167,139,250,0.2), rgba(167,139,250,0.1)); border-color:rgba(167,139,250,0.3);">
+                        🌡️</div>
+                    <h3>Equilibrium Temperature</h3>
+                    <p>The theoretical surface temperature of the planet assuming no atmosphere, calculated from stellar
+                        luminosity and orbital distance. Provides a baseline for estimating actual surface conditions.
+                    </p>
+                    <p style="margin-top:12px;"><strong style="color:var(--text-white);">Habitable range:</strong> 180 —
+                        310 K</p>
+                    <div
+                        style="margin-top:16px; font-family:var(--font-mono); font-size:0.85rem; color:var(--purple-accent);">
+                        Unit: Kelvin (K)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dataset Summary Table -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Feature Summary</h2>
+                <p>Complete overview of all dataset features and their roles</p>
+            </div>
+            <div class="chart-container reveal">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Category</th>
+                            <th>Unit</th>
+                            <th>Role in Habitability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Planet Radius</td>
+                            <td><span class="badge badge-cyan">Planetary</span></td>
+                            <td>R⊕</td>
+                            <td>Atmosphere retention, surface gravity</td>
+                        </tr>
+                        <tr>
+                            <td>Planet Mass</td>
+                            <td><span class="badge badge-cyan">Planetary</span></td>
+                            <td>M⊕</td>
+                            <td>Gravitational pull, atmospheric density</td>
+                        </tr>
+                        <tr>
+                            <td>Orbital Period</td>
+                            <td><span class="badge badge-cyan">Planetary</span></td>
+                            <td>Days</td>
+                            <td>Radiation exposure duration</td>
+                        </tr>
+                        <tr>
+                            <td>Semi-Major Axis</td>
+                            <td><span class="badge badge-cyan">Planetary</span></td>
+                            <td>AU</td>
+                            <td>Habitable zone position</td>
+                        </tr>
+                        <tr>
+                            <td>Stellar Temperature</td>
+                            <td><span class="badge badge-amber">Stellar</span></td>
+                            <td>K</td>
+                            <td>HZ boundaries, radiation type</td>
+                        </tr>
+                        <tr>
+                            <td>Stellar Luminosity</td>
+                            <td><span class="badge badge-amber">Stellar</span></td>
+                            <td>L☉</td>
+                            <td>Energy output, HZ distance</td>
+                        </tr>
+                        <tr>
+                            <td>Stellar Radius</td>
+                            <td><span class="badge badge-amber">Stellar</span></td>
+                            <td>R☉</td>
+                            <td>Transit depth, tidal effects</td>
+                        </tr>
+                        <tr>
+                            <td>Insolation Flux</td>
+                            <td><span class="badge badge-purple">Derived</span></td>
+                            <td>S⊕</td>
+                            <td>Surface energy budget</td>
+                        </tr>
+                        <tr>
+                            <td>Equilibrium Temp</td>
+                            <td><span class="badge badge-purple">Derived</span></td>
+                            <td>K</td>
+                            <td>Baseline surface temperature</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-logo">EPHI</span>
+                    <span class="footer-text">© 2026 Exoplanet Habitability Index</span>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="methodology.html">Methodology</a>
+                    <a href="explorer.html">Explorer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Machine learning methodology for exoplanet habitability prediction — models, preprocessing, and evaluation metrics.">
+    <title>Methodology — EPHI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <!-- No logo-icon here -->
+                <span>EPHI</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="methodology.html" class="active">Methodology</a></li>
+                <li><a href="dataset.html">Dataset</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="orbitalis.html" class="btn btn-orbitalis" style="padding:8px 20px; font-size:0.85rem;">Orbitalis</a></li>
+                <li><a href="explorer.html" class="btn btn-primary"
+                        style="padding:8px 20px; font-size:0.85rem;">Explorer</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="badge badge-cyan" style="margin-bottom:16px;">🧪 Research Approach</div>
+            <h1>Methodology</h1>
+            <p>The machine learning pipeline and evaluation framework behind habitability prediction</p>
+        </div>
+    </div>
+
+    <!-- ML Pipeline -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Machine Learning Pipeline</h2>
+                <p>End-to-end workflow from raw data to habitability classification</p>
+            </div>
+            <div class="pipeline-container reveal">
+                <div class="pipeline-circle"></div>
+                <div class="pipeline-step step-1">📥 Data Collection</div>
+                <div class="pipeline-step step-2">🧹 Preprocessing</div>
+                <div class="pipeline-step step-3">🔧 Feature Eng</div>
+                <div class="pipeline-step step-4">🤖 Model Training</div>
+                <div class="pipeline-step step-5">📊 Evaluation</div>
+                <div class="pipeline-step step-6">🎯 Prediction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Sources -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Data Sources</h2>
+                <p>Curated astronomical datasets from established repositories</p>
+            </div>
+            <div class="grid-2">
+                <div class="card reveal">
+                    <div class="card-icon">🏛️</div>
+                    <h3><a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank">NASA Exoplanet Archive</a></h3>
+                    <p>The primary source of confirmed exoplanet data, maintained by the NASA Exoplanet Science
+                        Institute. Contains confirmed planet parameters, stellar properties, and observational metadata
+                        for thousands of systems.</p>
+                    <div class="badge badge-green" style="margin-top:16px;">Primary Source</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">📦</div>
+                    <h3><a href="https://www.kaggle.com/datasets?search=exoplanet" target="_blank">Kaggle Exoplanet Datasets</a></h3>
+                    <p>Curated datasets optimized for machine learning research. Contains preprocessed features,
+                        habitability labels, and balanced training sets suitable for classification model development.
+                    </p>
+                    <div class="badge badge-cyan" style="margin-top:16px;">ML-Ready Data</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ML Models -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Machine Learning Models</h2>
+                <p>Four classification algorithms evaluated for habitability prediction</p>
+            </div>
+            <div class="grid-4">
+                <div class="card reveal">
+                    <div class="card-icon">📈</div>
+                    <h3>Logistic Regression</h3>
+                    <p>Linear classifier used as a baseline model. Provides interpretable decision boundaries and
+                        probability estimates for each habitability class.</p>
+                    <div class="badge badge-cyan" style="margin-top:16px;">Baseline</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">🌲</div>
+                    <h3>Decision Tree</h3>
+                    <p>Tree-based classifier that creates interpretable if-then rules. Useful for understanding which
+                        parameter thresholds separate habitability classes.</p>
+                    <div class="badge badge-green" style="margin-top:16px;">Interpretable</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">🌳</div>
+                    <h3>Random Forest</h3>
+                    <p>Ensemble of decision trees that reduces overfitting through bagging. Provides robust predictions
+                        and built-in feature importance ranking.</p>
+                    <div class="badge badge-amber" style="margin-top:16px;">Ensemble</div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">⚡</div>
+                    <h3>XGBoost</h3>
+                    <p>Gradient boosted trees optimized for speed and performance. Achieves state-of-the-art results
+                        through iterative error correction and regularization.</p>
+                    <div class="badge badge-purple" style="margin-top:16px;">Advanced</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preprocessing -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Preprocessing Techniques</h2>
+                <p>Data cleaning and transformation methods applied before model training</p>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Feature Scaling</h3>
+                    <p>StandardScaler normalization ensures all features contribute equally to model training regardless
+                        of their original magnitude or unit of measurement.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">🔧</div>
+                    <h3>Missing Value Handling</h3>
+                    <p>Imputation strategies replace missing values using statistical measures (mean/median) or
+                        model-based predictions to preserve dataset integrity.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Class Imbalance</h3>
+                    <p>SMOTE oversampling and class weighting techniques address the natural imbalance between habitable
+                        and non-habitable planet classifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evaluation Metrics -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Evaluation Metrics</h2>
+                <p>Standard metrics used to assess model performance</p>
+            </div>
+            <div class="grid-4">
+                <div class="card reveal" style="text-align:center;">
+                    <h3 style="color:var(--accent-cyan); font-size:2rem; margin-bottom:8px;">Accuracy</h3>
+                    <p style="margin:0 auto;">Ratio of correctly classified planets to total predictions</p>
+                </div>
+                <div class="card reveal" style="text-align:center;">
+                    <h3 style="color:var(--success-green); font-size:2rem; margin-bottom:8px;">Precision</h3>
+                    <p style="margin:0 auto;">How many predicted habitable planets are truly habitable</p>
+                </div>
+                <div class="card reveal" style="text-align:center;">
+                    <h3 style="color:var(--warning-amber); font-size:2rem; margin-bottom:8px;">Recall</h3>
+                    <p style="margin:0 auto;">How many actual habitable planets were correctly identified</p>
+                </div>
+                <div class="card reveal" style="text-align:center;">
+                    <h3 style="color:var(--purple-accent); font-size:2rem; margin-bottom:8px;">F1 Score</h3>
+                    <p style="margin:0 auto;">Harmonic mean of precision and recall for balanced evaluation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-logo">EPHI</span>
+                    <span class="footer-text">© 2026 Exoplanet Habitability Index</span>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="methodology.html">Methodology</a>
+                    <a href="explorer.html">Explorer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
