@@ -19,7 +19,7 @@ This platform provides an educational interface that allows users to explore exo
 
 ## 🛠️ Technology Stack
 
-EPHI is built strictly as a **100% Client-Side Web Application** to ensure high performance and easy deployment without backend requirements.
+EPHI is built strictly as a **Client-Side Web Application** to ensure high performance and easy deployment without backend requirements.
 
 - **Core**: HTML5, Vanilla JavaScript (ES6+), CSS3
 - **Data Visualization**: `Chart.js`
