@@ -12,7 +12,6 @@ This platform provides an educational interface that allows users to explore exo
 
 - **Habitability Explorer**: Input planetary parameters (Planet Radius, Mass, Orbital Distance) and stellar properties to calculate an estimated habitability score and view the classification (Habitable, Potentially Habitable, Non-Habitable).
 - **Standalone Orbitalis Simulation**: A state-of-the-art 3D interactive model of the solar system embedded as a dedicated workspace module.
-- **Glassmorphic Space Aesthetics**: Detailed, premium, dark-mode CSS styling with glowing buttons, parallax star background, and animated interface components.
 - **Methodology & Data Transparency**: Detailed explanations of the machine learning pipeline approach and data sources used to formulate habitability parameters.
 - **Results & Data Visualization**: Interactive charts powered by `Chart.js` displaying the distribution of known habitable planets across various boundaries.
 
