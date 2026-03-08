@@ -1,8 +1,8 @@
-# EPHI — Exoplanet Habitability Index
+# ExoPlanet Habitability Index
 
-![EPHI Header](https://img.shields.io/badge/Status-Completed-success) ![License](https://img.shields.io/badge/License-MIT-blue)
+![ExoPlanet Habitability Index Header](https://img.shields.io/badge/Status-Completed-success) ![License](https://img.shields.io/badge/License-MIT-blue)
 
-EPHI (Exoplanet Habitability Index) is a beautiful, interactive, front-end web platform designed to demonstrate concepts related to exoplanet habitability analysis using planetary and stellar parameters.
+ExoPlanet Habitability Index is a beautiful, interactive, front-end web platform designed to demonstrate concepts related to exoplanet habitability analysis using planetary and stellar parameters.
 
 This platform provides an educational interface that allows users to explore exoplanet data, visualize planetary orbits, and estimate potential habitability based on simplified heuristic rules. 
 
