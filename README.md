@@ -57,13 +57,12 @@ Since EPHI does not require a backend, running the project locally is incredibly
 
 ---
 
-## 👥 Contributors & Team Members
+## 👥 Team Members
 
 This project was brought to life by the following contributors:
-
-- **Pyugt** - [GitHub Profile](https://github.com/Pyugt)
-- **Pratham-Arun** - [GitHub Profile](https://github.com/Pratham-Arun)
-- **WesselBoi** - [GitHub Profile](https://github.com/WesselBoi)
-- **Zaa-Shreyas** - [GitHub Profile](https://github.com/Zaa-Shreyas)
+- **Shreyas Jha** - [GitHub Profile](https://github.com/Zaa-Shreyas)
+- **Pratham Arun** - [GitHub Profile](https://github.com/Pratham-Arun)
+- **Saksham Mathur** - [GitHub Profile](https://github.com/WesselBoi)
+- **Piyush Gautam** - [GitHub Profile](https://github.com/Pyugt)
 
 *Thank you to the whole team for their open-source contributions to space exploration education.*
