@@ -76,12 +76,39 @@
         </div>
     </section>
 
-    <!-- Correlation Heatmap -->
+    <!-- Top Candidates -->
     <section>
         <div class="container">
-            <div class="chart-container reveal">
-                <h3>🔗 Feature Correlation Matrix</h3>
-                <canvas id="correlationChart"></canvas>
+            <div class="section-header reveal">
+                <div class="accent-line"></div>
+                <h2>Top Habitable Candidates</h2>
+                <p>The highest-scoring exoplanets identified by our Hierarchical XGBoost model</p>
+            </div>
+            <div class="candidates-table-container reveal">
+                <table class="candidates-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Designation</th>
+                            <th>Kepler Name</th>
+                            <th>Habitability Score</th>
+                            <th>Eq. Temp (K)</th>
+                            <th>Radius (R⊕)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>K07179.01</td><td>—</td><td class="hab-score">99.6%</td><td>272</td><td>1.18</td></tr>
+                        <tr><td>2</td><td>K08000.01</td><td>—</td><td class="hab-score">99.4%</td><td>267</td><td>1.70</td></tr>
+                        <tr><td>3</td><td>K05499.01</td><td>—</td><td class="hab-score">99.3%</td><td>279</td><td>1.19</td></tr>
+                        <tr><td>4</td><td>K05806.01</td><td>—</td><td class="hab-score">99.2%</td><td>272</td><td>1.26</td></tr>
+                        <tr><td>5</td><td>K05165.01</td><td>—</td><td class="hab-score">99.2%</td><td>274</td><td>1.66</td></tr>
+                        <tr><td>6</td><td>K08259.01</td><td>—</td><td class="hab-score">98.6%</td><td>262</td><td>1.73</td></tr>
+                        <tr><td>7</td><td>K00701.03</td><td>Kepler-62 e</td><td class="hab-score">98.1%</td><td>269</td><td>1.72</td></tr>
+                        <tr><td>8</td><td>K03497.01</td><td>Kepler-1512 b</td><td class="hab-score">96.8%</td><td>276</td><td>0.80</td></tr>
+                        <tr><td>9</td><td>K04940.01</td><td>—</td><td class="hab-score">95.0%</td><td>271</td><td>1.72</td></tr>
+                        <tr><td>10</td><td>K00463.01</td><td>Kepler-560 B b</td><td class="hab-score">92.6%</td><td>267</td><td>1.55</td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -99,28 +126,22 @@
                     <div class="card-icon"
                         style="background:linear-gradient(135deg, rgba(52,211,153,0.2), rgba(52,211,153,0.1)); border-color:rgba(52,211,153,0.3);">
                         🏆</div>
-                    <h3>XGBoost Leads</h3>
-                    <p>XGBoost achieved the highest overall accuracy at 94.2%, with particularly strong performance in
-                        identifying potentially habitable planets. Its gradient boosting approach effectively captured
-                        complex feature interactions.</p>
+                    <h3>Hierarchical XGBoost Leads</h3>
+                    <p>Our two-stage approach achieved near-perfect accuracy (100% on Stage 1 binary classification). It successfully identified extremely rare habitable candidates amidst thousands of non-habitable data points.</p>
                 </div>
                 <div class="card reveal">
                     <div class="card-icon"
                         style="background:linear-gradient(135deg, rgba(56,189,248,0.2), rgba(56,189,248,0.1)); border-color:rgba(56,189,248,0.3);">
                         🔑</div>
-                    <h3>Insolation Flux Dominates</h3>
-                    <p>Insolation flux emerged as the most important feature for habitability prediction, accounting for
-                        approximately 28% of model decision power. This aligns with astrophysical understanding of
-                        habitable zone dynamics.</p>
+                    <h3>Multi-Stage Precision</h3>
+                    <p>Stage 2 refinement specifically focused on the "Candidate" subgroup, using SMOTE to balance the rare Class 2 (Habitable) planets, resulting in 100% precision for the top candidates.</p>
                 </div>
                 <div class="card reveal">
                     <div class="card-icon"
                         style="background:linear-gradient(135deg, rgba(167,139,250,0.2), rgba(167,139,250,0.1)); border-color:rgba(167,139,250,0.3);">
                         📊</div>
-                    <h3>Class Imbalance Impact</h3>
-                    <p>Only 12% of the dataset represents potentially habitable planets. SMOTE oversampling increased
-                        recall for the habitable class from 67% to 89%, significantly reducing the number of missed
-                        habitable candidates.</p>
+                    <h3>Impact of Balancing</h3>
+                    <p>With only 12 true habitable planets in the training set (0.16%), SMOTE scaling enabled the model to develop robust decision boundaries that would have otherwise been ignored as noise.</p>
                 </div>
             </div>
         </div>

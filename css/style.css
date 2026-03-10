@@ -1031,6 +1031,52 @@ section {
   color: var(--accent-cyan);
 }
 
+/* ---- Candidates Table ---- */
+.candidates-table-container {
+  overflow-x: auto;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  margin-top: 30px;
+}
+
+.candidates-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.candidates-table th, 
+.candidates-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.candidates-table th {
+  background: rgba(56, 189, 248, 0.05);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-white);
+}
+
+.candidates-table tr:last-child td {
+  border-bottom: none;
+}
+
+.candidates-table tr:hover {
+  background: rgba(56, 189, 248, 0.03);
+}
+
+.hab-score {
+  color: var(--accent-cyan);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
 /* ---- Animations ---- */
 @keyframes fadeSlideUp {
   from {
