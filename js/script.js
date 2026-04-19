@@ -95,11 +95,11 @@ function createModelComparisonChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Logistic Regression', 'Decision Tree', 'Random Forest', 'XGBoost'],
+            labels: ['Random Forest', 'XGBoost'],
             datasets: [
                 {
                     label: 'Accuracy',
-                    data: [0.872, 0.891, 0.928, 1.000],
+                    data: [0.928, 1.000],
                     backgroundColor: 'rgba(56, 189, 248, 0.8)',
                     borderColor: 'rgba(56, 189, 248, 1)',
                     borderWidth: 1,
@@ -107,7 +107,7 @@ function createModelComparisonChart() {
                 },
                 {
                     label: 'Precision',
-                    data: [0.854, 0.876, 0.915, 0.970],
+                    data: [0.915, 0.970],
                     backgroundColor: 'rgba(52, 211, 153, 0.8)',
                     borderColor: 'rgba(52, 211, 153, 1)',
                     borderWidth: 1,
@@ -115,7 +115,7 @@ function createModelComparisonChart() {
                 },
                 {
                     label: 'Recall',
-                    data: [0.831, 0.862, 0.901, 0.950],
+                    data: [0.901, 0.950],
                     backgroundColor: 'rgba(251, 191, 36, 0.8)',
                     borderColor: 'rgba(251, 191, 36, 1)',
                     borderWidth: 1,
@@ -123,7 +123,7 @@ function createModelComparisonChart() {
                 },
                 {
                     label: 'F1 Score',
-                    data: [0.842, 0.869, 0.913, 0.960],
+                    data: [0.913, 0.960],
                     backgroundColor: 'rgba(167, 139, 250, 0.8)',
                     borderColor: 'rgba(167, 139, 250, 1)',
                     borderWidth: 1,
